@@ -32,6 +32,10 @@ export default function FounderSection() {
               <img
                 src={founder.portraitUrl}
                 alt={`${founder.name}, ${founder.position}`}
+                width={400}
+                height={500}
+                loading="lazy"
+                decoding="async"
                 className="aspect-[4/5] w-full rounded-2xl border border-border object-cover"
               />
             ) : (

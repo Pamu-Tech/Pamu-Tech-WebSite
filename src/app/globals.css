@@ -183,3 +183,27 @@ html.tab-hidden * {
     animation: none !important;
   }
 }
+
+/* Theme & interaction polish */
+body {
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+footer a:not([aria-label]) {
+  position: relative;
+}
+footer a:not([aria-label])::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+footer a:not([aria-label]):hover::after {
+  transform: scaleX(1);
+}

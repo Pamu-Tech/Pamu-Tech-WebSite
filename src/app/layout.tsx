@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"], weight: ["400", "600", "700"], variabl
 const siteUrl = (site.url ?? "https://www.pamutech.dev").replace(/\/$/, "");
 const isPreview = process.env.VERCEL_ENV === "preview" || process.env.NEXT_PUBLIC_VERCEL_ENV === "preview";
 const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION;
-const bingVerification = process.env.NEXT_PUBLIC_BING_VERIFICATION;
+const bingVerification = process.env.NEXT_PUBLIC_BING_VERIFICATION ?? "61572AF800921E25A732E656D9FFB597";
 
 const homeDescription =
   "Pamu Tech is a Sri Lankan technology startup building innovative software, mobile apps and accessible digital products, including Pin Potha and SLBIS.";

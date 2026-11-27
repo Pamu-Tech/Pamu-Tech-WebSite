@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <Link href="/" className="inline-flex items-center gap-2.5 text-lg font-bold tracking-tight" aria-label="Pamu Tech home">
-            <img src="/logos/pamu-tech-logo.png" alt="" className="h-9 w-auto" aria-hidden />
+            <img src="/logos/pamu-tech-logo.svg" alt="" width={36} height={36} className="h-9 w-9" aria-hidden="true" />
             <span>Pamu<span className="text-accent-text"> Tech</span></span>
           </Link>
           <p className="mt-3 text-justify text-sm text-muted">{site.description}</p>
