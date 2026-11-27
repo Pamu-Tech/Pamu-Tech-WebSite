@@ -27,7 +27,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-6xl px-4 py-16 sm:py-24">
           <p className="text-xs font-semibold tracking-[0.2em] text-accent-text">INNOVATION. TECHNOLOGY. IMPACT.</p>
           <h1 className="mt-4 text-4xl font-bold leading-tight sm:text-6xl">
-            Building Technology.<br />Creating Meaningful Impact.
+            Pamu Tech: Building Technology.<br />Creating Meaningful Impact.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted">
             Pamu Tech creates innovative digital products that address real-world challenges through reliable, accessible and practical technology.
@@ -48,7 +48,7 @@ export default function Home() {
           <p className="mt-4 max-w-3xl text-muted">
             Pamu Tech is a founder-led, early-stage brand. We build and own our software products, focusing on real-world problem solving and meaningful innovation.
           </p>
-          <Link href="/about/" className="mt-4 inline-flex min-h-11 items-center gap-2 font-semibold text-accent-text">Read more about us <ArrowRight className="h-4 w-4" aria-hidden /></Link>
+          <Link href="/about/" className="mt-4 inline-flex min-h-11 items-center gap-2 font-semibold text-accent-text">About Pamu Tech <ArrowRight className="h-4 w-4" aria-hidden /></Link>
         </div>
       </section>
 
@@ -93,7 +93,7 @@ export default function Home() {
                   {p.external && (
                     <a href={p.external} target="_blank" rel="noopener noreferrer" className="inline-flex h-11 items-center rounded-lg bg-accent px-5 font-semibold text-on-accent">Get it on Google Play</a>
                   )}
-                  <Link href={p.href} className="inline-flex h-11 items-center rounded-lg border border-border px-5 font-semibold hover:border-accent">Learn More</Link>
+                  <Link href={p.href} className="inline-flex h-11 items-center rounded-lg border border-border px-5 font-semibold hover:border-accent">Explore {p.name}</Link>
                 </div>
               </article>
             ))}

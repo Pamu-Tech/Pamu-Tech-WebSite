@@ -95,7 +95,7 @@ export default function ProductList({ products }: { products: Product[] }) {
                   href={p.href}
                   className="inline-flex h-11 items-center rounded-lg border border-border px-5 font-semibold hover:border-accent"
                 >
-                  Learn More
+                  Explore {p.name}
                 </Link>
               </div>
             </article>

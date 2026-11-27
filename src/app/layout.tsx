@@ -13,10 +13,13 @@ const isPreview = process.env.VERCEL_ENV === "preview" || process.env.NEXT_PUBLI
 const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION;
 const bingVerification = process.env.NEXT_PUBLIC_BING_VERIFICATION;
 
+const homeDescription =
+  "Pamu Tech is a Sri Lankan technology startup building innovative software, mobile apps and accessible digital products, including Pin Potha and SLBIS.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: "Pamu Tech | Sri Lankan Product-Based Technology Startup", template: "%s | Pamu Tech" },
-  description: site.description,
+  title: { default: "Pamu Tech | Sri Lankan Software & Technology Startup", template: "%s | Pamu Tech" },
+  description: homeDescription,
   alternates: { canonical: "/" },
   robots: isPreview ? { index: false, follow: false } : { index: true, follow: true },
   verification: {
@@ -24,8 +27,8 @@ export const metadata: Metadata = {
     ...(bingVerification ? { other: { "msvalidate.01": bingVerification } } : {}),
   },
   openGraph: {
-    title: "Pamu Tech | Sri Lankan Product-Based Technology Startup",
-    description: site.description,
+    title: "Pamu Tech | Sri Lankan Software & Technology Startup",
+    description: homeDescription,
     url: siteUrl,
     siteName: "Pamu Tech",
     type: "website",
@@ -33,8 +36,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pamu Tech | Sri Lankan Product-Based Technology Startup",
-    description: site.description,
+    title: "Pamu Tech | Sri Lankan Software & Technology Startup",
+    description: homeDescription,
     images: ["/og-image.png"],
   },
 };
