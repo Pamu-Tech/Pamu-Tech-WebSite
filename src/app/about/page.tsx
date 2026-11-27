@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
+import FounderSection from "@/components/about/FounderSection";
 import { createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
@@ -71,6 +72,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <FounderSection />
 
       {/* Proposed vision and mission: pending founder approval */}
       <section className="border-t border-border">
