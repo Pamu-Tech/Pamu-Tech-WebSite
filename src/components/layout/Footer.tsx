@@ -16,7 +16,7 @@ export default function Footer() {
             <img src="/logos/no%20background.png" alt="" className="h-9 w-auto" aria-hidden />
             <span>Pamu<span className="text-accent-text"> Tech</span></span>
           </Link>
-          <p className="mt-3 text-sm text-muted">{site.description}</p>
+          <p className="mt-3 text-justify text-sm text-muted">{site.description}</p>
         </div>
         <div>
           <h2 className="text-sm font-semibold">Explore</h2>

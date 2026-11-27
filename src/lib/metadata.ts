@@ -11,7 +11,7 @@ export function createMetadata({
   path: string;
 }): Metadata {
   const fullTitle = `${title} | ${site.name}`;
-  const url = `${site.url.replace(/\/$/, "")}${path}`;
+  const url = `${(site.url ?? "https://pamutech.dev").replace(/\/$/, "")}${path}`;
 
   return {
     title: fullTitle,

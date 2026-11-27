@@ -8,7 +8,7 @@ import { site } from "@/config/site";
 const inter = Inter({ subsets: ["latin"], weight: ["400", "600", "700"], variable: "--font-inter", display: "swap" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
+  metadataBase: new URL(site.url ?? "https://pamutech.dev"),
   title: { default: "Pamu Tech | Building Technology. Creating Meaningful Impact.", template: "%s | Pamu Tech" },
   description: site.description,
   alternates: { canonical: "/" },

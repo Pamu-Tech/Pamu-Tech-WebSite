@@ -2,7 +2,7 @@ import { Github, Globe, Linkedin, User } from "lucide-react";
 
 // TODO: Replace with confirmed founder portrait path and social profile URLs.
 const founder = {
-  name: "Pamuda",
+  name: "Pamuda U. de A. Goonatilake",
   position: "Founder of Pamu Tech",
   background: "Computer Science Undergraduate",
   interests: [
@@ -11,11 +11,11 @@ const founder = {
     "Technology",
     "Entrepreneurship",
   ],
-  portraitUrl: "",
+  portraitUrl: "/Photos/Profile%20Jacket2.png",
   socials: [
-    { label: "LinkedIn", href: "#", icon: Linkedin },
-    { label: "GitHub", href: "#", icon: Github },
-    { label: "Personal Portfolio", href: "#", icon: Globe },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/pamuda-uposath-goonatilake/", icon: Linkedin },
+    { label: "GitHub", href: "https://github.com/PamudaUposath", icon: Github },
+    { label: "Personal Portfolio", href: "https://pamudauposath.github.io/portfolio/", icon: Globe },
   ],
 };
 
@@ -85,7 +85,9 @@ export default function FounderSection() {
                   <a
                     key={s.label}
                     href={s.href}
-                    aria-label={`${founder.name} on ${s.label} (placeholder link)`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${founder.name} on ${s.label}`}
                     className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-border bg-bg px-4 text-sm font-semibold transition-colors hover:border-accent hover:text-accent-text"
                   >
                     <Icon className="h-4 w-4" aria-hidden />

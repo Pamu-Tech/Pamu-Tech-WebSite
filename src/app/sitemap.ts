@@ -20,7 +20,7 @@ const routes = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = site.url.replace(/\/$/, "");
+  const base = (site.url ?? "https://pamutech.dev").replace(/\/$/, "");
   return routes.map((route) => ({
     url: `${base}${route}`,
     changeFrequency: "monthly",

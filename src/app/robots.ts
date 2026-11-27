@@ -4,7 +4,7 @@ import { site } from "@/config/site";
 export const dynamic = "force-static";
 
 export default function robots(): MetadataRoute.Robots {
-  const base = site.url.replace(/\/$/, "");
+  const base = (site.url ?? "https://pamutech.dev").replace(/\/$/, "");
   return {
     rules: {
       userAgent: "*",
