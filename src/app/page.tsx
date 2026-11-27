@@ -17,21 +17,32 @@ const areas = ["Software innovation", "Environmental technology", "Community-foc
 export default function Home() {
   return (
     <>
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:py-24">
-        <p className="text-xs font-semibold tracking-[0.2em] text-accent-text">INNOVATION. TECHNOLOGY. IMPACT.</p>
-        <h1 className="mt-4 text-4xl font-bold leading-tight sm:text-6xl">
-          Building Technology.<br />Creating Meaningful Impact.
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg text-muted">
-          Pamu Tech creates innovative digital products that address real-world challenges through reliable, accessible and practical technology.
-        </p>
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Link href="/products/" className="inline-flex h-12 items-center justify-center rounded-lg bg-accent px-6 font-semibold text-on-accent">Explore Our Products</Link>
-          <Link href="/about/" className="inline-flex h-12 items-center justify-center rounded-lg border border-border px-6 font-semibold hover:border-accent">About Pamu Tech</Link>
+      <section className="relative overflow-hidden">
+        {site.effects.heroBackground && (
+          <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+            <div className="hero-bg-grid absolute inset-0" />
+            <div className="hero-bg-glow absolute inset-0" />
+          </div>
+        )}
+        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:py-24">
+          <p className="text-xs font-semibold tracking-[0.2em] text-accent-text">INNOVATION. TECHNOLOGY. IMPACT.</p>
+          <h1 className="mt-4 text-4xl font-bold leading-tight sm:text-6xl">
+            Building Technology.<br />Creating Meaningful Impact.
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg text-muted">
+            Pamu Tech creates innovative digital products that address real-world challenges through reliable, accessible and practical technology.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link href="/products/" className="inline-flex h-12 items-center justify-center rounded-lg bg-accent px-6 font-semibold text-on-accent transition-colors duration-150">Explore Our Products</Link>
+            <Link href="/about/" className="inline-flex h-12 items-center justify-center rounded-lg border border-border px-6 font-semibold transition-colors duration-150 hover:border-accent">About Pamu Tech</Link>
+          </div>
+          <a href="#about-summary" className="scroll-cue mt-10 inline-flex min-h-11 items-center gap-2 text-xs font-semibold tracking-wider text-muted uppercase hover:text-fg">
+            Scroll to explore <ArrowRight className="h-3.5 w-3.5 rotate-90" aria-hidden />
+          </a>
         </div>
       </section>
 
-      <section className="border-t border-border">
+      <section id="about-summary" className="reveal border-t border-border">
         <div className="mx-auto max-w-6xl px-4 py-16">
           <h2 className="text-2xl font-bold sm:text-3xl">A Sri Lankan product-based technology brand</h2>
           <p className="mt-4 max-w-3xl text-muted">
@@ -46,7 +57,28 @@ export default function Home() {
           <h2 className="text-2xl font-bold sm:text-3xl">Featured products</h2>
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             {products.map((p) => (
-              <article key={p.slug} className={`rounded-2xl border bg-bg p-6 ${p.accent === "green" ? "border-leaf/50" : "border-border"}`}>
+              <article
+                key={p.slug}
+                className={`reveal relative overflow-hidden rounded-2xl border bg-bg p-6 transition-colors duration-150 ${
+                  p.accent === "green"
+                    ? "border-leaf/50 hover:border-leaf focus-within:border-leaf"
+                    : "border-border hover:border-accent focus-within:border-accent"
+                }`}
+              >
+                {p.accent === "green" && site.effects.slbisNodes && (
+                  <svg
+                    className="slbis-nodes pointer-events-none absolute right-3 top-3 h-24 w-24 text-leaf"
+                    viewBox="0 0 100 100"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path d="M20 25 L55 18 L80 45 L45 72 Z" stroke="currentColor" strokeOpacity="0.18" strokeWidth="1.2" />
+                    <circle className="slbis-node-pulse" cx="20" cy="25" r="3" fill="currentColor" />
+                    <circle className="slbis-node-pulse" cx="55" cy="18" r="3" fill="currentColor" />
+                    <circle className="slbis-node-pulse" cx="80" cy="45" r="3" fill="currentColor" />
+                    <circle className="slbis-node-pulse" cx="45" cy="72" r="3" fill="currentColor" />
+                  </svg>
+                )}
                 <p className={`inline-block rounded-full border px-3 py-1 text-xs font-semibold ${p.accent === "green" ? "border-leaf text-leaf" : "border-accent text-accent-text"}`}>
                   {p.status === "Available" ? "Available Now" : p.status}
                 </p>

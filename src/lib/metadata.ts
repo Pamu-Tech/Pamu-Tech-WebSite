@@ -10,11 +10,12 @@ export function createMetadata({
   description: string;
   path: string;
 }): Metadata {
+  const base = (site.url ?? "https://www.pamutech.dev").replace(/\/$/, "");
   const fullTitle = `${title} | ${site.name}`;
-  const url = `${(site.url ?? "https://pamutech.dev").replace(/\/$/, "")}${path}`;
+  const url = `${base}${path}`;
 
   return {
-    title: fullTitle,
+    title,
     description,
     alternates: {
       canonical: path,

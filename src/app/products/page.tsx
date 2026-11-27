@@ -1,6 +1,7 @@
 import { products } from "@/config/site";
 import { createMetadata } from "@/lib/metadata";
 import ProductList from "@/components/products/ProductList";
+import SectionBackground from "@/components/effects/SectionBackground";
 
 export const metadata = createMetadata({
   title: "Products",
@@ -11,7 +12,9 @@ export const metadata = createMetadata({
 
 export default function ProductsPage() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
+    <section className="relative overflow-hidden">
+      <SectionBackground variant="catalogue-grid" />
+      <div className="relative mx-auto max-w-6xl px-4 py-16 sm:py-20">
       <p className="text-xs font-semibold tracking-[0.2em] text-accent-text">PRODUCTS</p>
       <h1 className="mt-4 text-4xl font-bold leading-tight sm:text-5xl">
         Practical software built for real-world use
@@ -21,6 +24,7 @@ export default function ProductsPage() {
       </p>
 
       <ProductList products={products} />
+      </div>
     </section>
   );
 }

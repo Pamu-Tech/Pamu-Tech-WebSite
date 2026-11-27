@@ -38,12 +38,38 @@ export const site = {
     `© ${new Date().getFullYear()} Pamu Tech. All rights reserved.`,
 
   social: {
-    linkedin: "",
-    facebook: "",
+    linkedin: "https://www.linkedin.com/company/pamu-tech",
+    facebook: "https://web.facebook.com/pamu.tech.official",
     instagram: "",
-    youtube: "",
+    youtube: "https://www.youtube.com/channel/UC8lEo1RrMLCewa2J8RV1Jng",
     github: "",
     x: "",
+  },
+
+  effects: {
+    heroBackground: true,
+    scrollReveal: true,
+    scrollProgress: true,
+    headerScroll: true,
+    slbisNodes: true,
+    variants: {
+      "hero-dots": true,
+      "about-lines": true,
+      "approach-line": true,
+      "impact-nodes": true,
+      "partner-arcs": true,
+      "updates-sweep": true,
+      "faq-quiet": true,
+      "about-contours": true,
+      "catalogue-grid": true,
+      "pin-potha-warm": true,
+      "slbis-topography": true,
+      "slbis-sync": true,
+      "innovation-network": true,
+      "ai-circuit": true,
+      "investors-line": true,
+      "contact-pulse": true,
+    },
   },
 } as const;
 

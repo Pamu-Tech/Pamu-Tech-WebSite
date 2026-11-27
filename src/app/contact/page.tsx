@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ExternalLink, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import SocialLinks from "@/components/ui/SocialLinks";
 import { products, site } from "@/config/site";
 import { createMetadata } from "@/lib/metadata";
 
@@ -131,21 +132,9 @@ export default function ContactPage() {
             <p className="mt-3 text-muted">
               Follow our updates and announcements:
             </p>
-            <ul className="mt-4 space-y-2">
-              {socials.map(([label, url]) => (
-                <li key={label}>
-                  <a
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex min-h-11 items-center gap-2 font-semibold text-accent-text underline-offset-4 hover:underline"
-                  >
-                    {label}
-                    <ExternalLink className="h-4 w-4" aria-hidden />
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <div className="mt-4">
+              <SocialLinks />
+            </div>
           </div>
         </div>
       </section>

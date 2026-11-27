@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import FounderSection from "@/components/about/FounderSection";
+import SectionBackground from "@/components/effects/SectionBackground";
 import { createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
@@ -39,7 +40,9 @@ const philosophy = [
 export default function AboutPage() {
   return (
     <>
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
+      <section className="relative overflow-hidden">
+        <SectionBackground variant="about-contours" />
+        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:py-20">
         <p className="text-xs font-semibold tracking-[0.2em] text-accent-text">ABOUT PAMU TECH</p>
         <h1 className="mt-4 text-4xl font-bold leading-tight sm:text-5xl">
           A Sri Lankan product-based technology brand
@@ -47,6 +50,7 @@ export default function AboutPage() {
         <p className="mt-6 max-w-3xl text-lg text-muted">
           Pamu Tech is a founder-led, early-stage technology brand based in Sri Lanka. We create, own and evolve digital products that address real-world challenges through reliable, accessible and practical software.
         </p>
+        </div>
       </section>
 
       <section className="border-t border-border bg-surface">

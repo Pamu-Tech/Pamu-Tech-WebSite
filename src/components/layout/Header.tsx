@@ -11,7 +11,7 @@ export default function Header() {
     <header className="sticky top-0 z-40 border-b border-border bg-bg/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         <Link href="/" className="inline-flex items-center gap-2.5 text-lg font-bold tracking-tight" aria-label="Pamu Tech home">
-          <img src="/logos/no%20background.png" alt="" className="h-9 w-auto" aria-hidden />
+          <img src="/logos/pamu-tech-logo.png" alt="" className="h-9 w-auto" aria-hidden />
           <span>Pamu<span className="text-accent-text"> Tech</span></span>
         </Link>
         <nav aria-label="Main" className="hidden items-center gap-6 md:flex">

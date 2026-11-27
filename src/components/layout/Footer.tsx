@@ -1,19 +1,14 @@
 import Link from "next/link";
 import { nav, products, site } from "@/config/site";
+import SocialLinks from "@/components/ui/SocialLinks";
 
 export default function Footer() {
-  const socials = [
-    ["LinkedIn", site.social.linkedin],
-    ["Facebook", site.social.facebook],
-    ["YouTube", site.social.youtube],
-    ["Blog", site.blog],
-  ].filter(([, url]) => url);
   return (
     <footer className="border-t border-border bg-surface">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <Link href="/" className="inline-flex items-center gap-2.5 text-lg font-bold tracking-tight" aria-label="Pamu Tech home">
-            <img src="/logos/no%20background.png" alt="" className="h-9 w-auto" aria-hidden />
+            <img src="/logos/pamu-tech-logo.png" alt="" className="h-9 w-auto" aria-hidden />
             <span>Pamu<span className="text-accent-text"> Tech</span></span>
           </Link>
           <p className="mt-3 text-justify text-sm text-muted">{site.description}</p>
@@ -41,9 +36,7 @@ export default function Footer() {
           <h2 className="text-sm font-semibold">Connect</h2>
           <ul className="mt-3 space-y-1 text-sm text-muted">
             <li><a className="inline-flex min-h-8 items-center break-all hover:text-fg" href={`mailto:${site.email}`}>{site.email}</a></li>
-            {socials.map(([label, url]) => (
-              <li key={label}><a className="inline-flex min-h-8 items-center hover:text-fg" href={url} rel="noopener noreferrer" target="_blank">{label}</a></li>
-            ))}
+            <li className="py-2"><SocialLinks /></li>
             <li><Link className="inline-flex min-h-8 items-center hover:text-fg" href="/privacy/">Privacy Policy</Link></li>
             <li><Link className="inline-flex min-h-8 items-center hover:text-fg" href="/terms/">Terms of Use</Link></li>
           </ul>
