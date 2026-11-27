@@ -42,31 +42,35 @@ export default function ScrollEffects() {
     updateScroll();
 
     let observer: IntersectionObserver | undefined;
+    let rafId = 0;
     if (site.effects.scrollReveal && !reduced && "IntersectionObserver" in window) {
-      root.classList.add("js-reveal");
-      const targets = document.querySelectorAll<HTMLElement>(".reveal");
-      observer = new IntersectionObserver(
-        (entries) => {
-          for (const entry of entries) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              observer?.unobserve(entry.target);
+      rafId = requestAnimationFrame(() => {
+        root.classList.add("js-reveal");
+        const targets = document.querySelectorAll<HTMLElement>(".reveal");
+        observer = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer?.unobserve(entry.target);
+              }
             }
+          },
+          { threshold: 0.08 }
+        );
+        targets.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.98) {
+            el.classList.add("is-visible");
+          } else {
+            observer?.observe(el);
           }
-        },
-        { threshold: 0.08 }
-      );
-      targets.forEach((el) => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.98) {
-          el.classList.add("is-visible");
-        } else {
-          observer?.observe(el);
-        }
+        });
       });
     }
 
     return () => {
+      cancelAnimationFrame(rafId);
       document.removeEventListener("visibilitychange", onVisibility);
       window.removeEventListener("scroll", onScroll);
       observer?.disconnect();

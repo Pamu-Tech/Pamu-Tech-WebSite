@@ -98,6 +98,16 @@ export default function Header() {
                 </li>
               );
             })}
+            <li>
+              <Link
+                href="/contact/"
+                aria-current={isActive("/contact/") ? "page" : undefined}
+                onClick={() => setOpen(false)}
+                className={`flex min-h-11 items-center text-base ${isActive("/contact/") ? "font-semibold text-accent-text" : ""}`}
+              >
+                Contact
+              </Link>
+            </li>
           </ul>
         </nav>
       )}

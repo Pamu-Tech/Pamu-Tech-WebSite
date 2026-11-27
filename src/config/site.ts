@@ -293,14 +293,6 @@ export const nav = [
     label: "Innovation",
     href: "/innovation/",
   },
-  {
-    label: "Blog",
-    href: "/blog/",
-  },
-  {
-    label: "Contact",
-    href: "/contact/",
-  },
 ] as const;
 
 
